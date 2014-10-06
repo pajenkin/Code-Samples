@@ -37,6 +37,32 @@ function setBackgroundImageRotation(){
 	}, duration);
 };
 
+//For Animated Transitions
+/*
+function setBackgroundImageRotation(){
+	var visibleImage = $(".photo-background-visible");
+	setTimeout(function(){
+		if(visibleImage.is(":last-child")){
+			visibleImage.fadeOut(function(){
+				$(".first-photo").fadeIn('slow', function(){
+					$(this).toggleClass('photo-background-visible photo-background-hidden');
+					visibleImage.toggleClass('photo-background-visible photo-background-hidden');
+				});
+			});
+		}else{
+			visibleImage.fadeOut(function(){
+				visibleImage.next().fadeIn('slow', function(){
+					$(this).toggleClass('photo-background-visible photo-background-hidden');
+					visibleImage.toggleClass('photo-background-visible photo-background-hidden');
+				});
+			});
+		};
+		//console.log("This is the ticker");
+		setBackgroundImageRotation();
+	}, duration);
+};
+*/
+
 function returnImageHtml(imageSrc, imageClass){
 	return '<img class="img-responsive ' + imageClass + '" src="' + imageSrc +'" alt="pilot_img-responsive photography">';
 }
